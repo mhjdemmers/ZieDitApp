@@ -3,10 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ZieDitApp.View.HomePage"
              Title="Home">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout Spacing="10" Padding="10">
+
+        <!-- Logo and Text -->
+        <HorizontalStackLayout>
+            <Image Source="your_logo_image_path.png" WidthRequest="50" HeightRequest="50" />
+            <Label Text="Zie Dit" VerticalOptions="Center" HorizontalOptions="Start" />
+        </HorizontalStackLayout>
+
+        <!-- Buttons -->
+        <Button Text="Events" Clicked="OnEventsClicked" />
+        <Button Text="Scan" Clicked="OnScanClicked" />
+        <Button Text="Schedule" Clicked="OnScheduleClicked" />
+        <Button Text="Data" Clicked="OnDataClicked" />
     </VerticalStackLayout>
 </ContentPage>
