@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ZieDitApp.Model
 {
-    internal class Activity
+    public class Activity
     {
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public DateTime Time { get; set; }
+
     }
 }
