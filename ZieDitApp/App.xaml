@@ -8,6 +8,82 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                <ResourceDictionary>
+                    <!--
+                        Zuyd rood = #e81a32
+                        Zwart = #000000
+                        wit = #ffffff
+                        Zuyd geel = #ffe600
+                        Zuyd donkerblauw = #2d2382
+                        Zuyd blauw = #007bc7
+                        Zuyd groen = #82c8b4
+                        Zuyd roze = #ffb9d7
+                        Zuyd oranje = #f07800
+                    -->
+                    
+                    <!--for titles-->
+                    <Style x:Key="LabelStyle1Red" TargetType="Label">
+                        <Setter Property="TextColor" Value="#e81a32" />
+                        <Setter Property="FontSize" Value="70" />
+                        <Setter Property="FontFamily" Value="IBMPlexSans-Bold" />
+                    </Style>
+                    <!--for titles-->
+                    <Style x:Key="LabelStyle1Black" TargetType="Label">
+                        <Setter Property="TextColor" Value="#000000" />
+                        <Setter Property="FontSize" Value="80" />
+                        <Setter Property="FontFamily" Value="IBMPlexSans-Bold" />
+                    </Style>
+                    <!--for titles-->
+                    <Style x:Key="LabelStyle1RedSerif" TargetType="Label">
+                        <Setter Property="TextColor" Value="#e81a32" />
+                        <Setter Property="FontSize" Value="70" />
+                        <Setter Property="FontFamily" Value="IBMPlexSerif-Regular" />
+                    </Style>
+                    <!--for titles-->
+                    <Style x:Key="LabelStyle1BlackSerif" TargetType="Label">
+                        <Setter Property="TextColor" Value="#000000" />
+                        <Setter Property="FontSize" Value="80" />
+                        <Setter Property="FontFamily" Value="IBMPlexSerif-Regular" />
+                    </Style>
+                    <!--for headings-->
+                    <Style x:Key="LabelStyle2Black" TargetType="Label">
+                        <Setter Property="TextColor" Value="#000000" />
+                        <Setter Property="FontSize" Value="40" />
+                        <Setter Property="FontFamily" Value="AvenirNextLTPro-Regular" />
+                    </Style>
+                    <!--for headings-->
+                    <Style x:Key="LabelStyle2White" TargetType="Label">
+                        <Setter Property="TextColor" Value="#ffffff" />
+                        <Setter Property="FontSize" Value="40" />
+                        <Setter Property="FontFamily" Value="AvenirNextLTPro-Regular" />
+                    </Style>
+                    <!--for headings-->
+                    <Style x:Key="LabelStyle2Red" TargetType="Label">
+                        <Setter Property="TextColor" Value="#e81a32" />
+                        <Setter Property="FontSize" Value="40" />
+                        <Setter Property="FontFamily" Value="AvenirNextLTPro-Regular" />
+                    </Style>
+                    <!--for content-->
+                    <Style x:Key="LabelStyle3Black" TargetType="Label">
+                        <Setter Property="TextColor" Value="#000000" />
+                        <Setter Property="FontSize" Value="24" />
+                        <Setter Property="FontFamily" Value="AvenirNextLTPro-Regular" />
+                    </Style>
+                    <!--for content-->
+                    <Style x:Key="LabelStyle3White" TargetType="Label">
+                        <Setter Property="TextColor" Value="#ffffff" />
+                        <Setter Property="FontSize" Value="24" />
+                        <Setter Property="FontFamily" Value="AvenirNextLTPro-Regular" />
+                    </Style>
+                    <!--for buttons-->
+                    <Style x:Key="ButtonStyleRed" TargetType="Button">
+                        <Setter Property="BackgroundColor" Value="#e81a32" />
+                        <Setter Property="TextColor" Value="#ffffff" />
+                        <Setter Property="FontSize" Value="24" />
+                        <Setter Property="FontFamily" Value="IBMPlexSans-Regular" />
+                        <Setter Property="CornerRadius" Value="0" />
+                    </Style>
+                </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
