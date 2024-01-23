@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace ZieDitApp.Model
 {
-    internal class Event
+    public class Event
     {
+        public Event()
+        {
+        }
+
+        public string Name { get; set; }
+        public DateTime Date { get; set; }
+        public string Location { get; set; }
+
     }
 }
