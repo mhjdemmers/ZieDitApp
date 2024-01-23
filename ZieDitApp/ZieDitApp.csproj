@@ -57,6 +57,38 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\IBMPlexSans-Bold.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSans-BoldItalic.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSans-ExtraLight.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSans-ExtraLightItalic.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSans-Italic.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSans-Light.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSans-LightItalic.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSans-Medium.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSans-MediumItalic.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSans-Regular.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSans-SemiBold.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSans-SemiBoldItalic.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSans-Thin.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSans-ThinItalic.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSerif-Bold.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSerif-BoldItalic.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSerif-ExtraLight.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSerif-ExtraLightItalic.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSerif-Italic.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSerif-Light.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSerif-LightItalic.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSerif-Medium.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSerif-MediumItalic.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSerif-Regular.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSerif-SemiBold.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSerif-SemiBoldItalic.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSerif-Thin.ttf" />
+	  <None Remove="Resources\Fonts\IBMPlexSerif-ThinItalic.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Camera.MAUI" Version="1.4.4" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.6" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.6" />
