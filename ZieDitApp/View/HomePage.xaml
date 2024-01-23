@@ -8,13 +8,13 @@
         <!-- Logo and Text -->
         <HorizontalStackLayout>
             <Image Source="your_logo_image_path.png" WidthRequest="50" HeightRequest="50" />
-            <Label Text="Zie Dit" VerticalOptions="Center" HorizontalOptions="Start" />
+            <Label Text="Zie Dit" VerticalOptions="Center" HorizontalOptions="Start" Style="{StaticResource LabelStyle1Red}"/>
         </HorizontalStackLayout>
 
         <!-- Buttons -->
-        <Button Text="Events" Clicked="OnEventsClicked" />
-        <Button Text="Scan" Clicked="OnScanClicked" />
-        <Button Text="Schedule" Clicked="OnScheduleClicked" />
-        <Button Text="Data" Clicked="OnDataClicked" />
+        <Button Text="Events" Clicked="OnEventsClicked" Style="{StaticResource ButtonStyleRed}"/>
+        <Button Text="Scan" Clicked="OnScanClicked" Style="{StaticResource ButtonStyleRed}"/>
+        <Button Text="Schedule" Clicked="OnScheduleClicked" Style="{StaticResource ButtonStyleRed}"/>
+        <Button Text="Data" Clicked="OnDataClicked" Style="{StaticResource ButtonStyleRed}"/>
     </VerticalStackLayout>
 </ContentPage>
