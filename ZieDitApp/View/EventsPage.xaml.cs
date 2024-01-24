@@ -8,4 +8,8 @@ public partial class EventsPage : ContentPage
 		InitializeComponent();
         BindingContext = new EventsViewModel();
     }
+    public void OnFrameTapped(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new EventPage());
+    }
 }

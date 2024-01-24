@@ -22,6 +22,9 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame Padding="10" BackgroundColor="#e81a32">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnFrameTapped"/>
+                        </Frame.GestureRecognizers>
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
