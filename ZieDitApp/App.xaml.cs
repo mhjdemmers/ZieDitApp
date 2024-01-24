@@ -6,7 +6,7 @@
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new View.HomePage());
+            MainPage = new NavigationPage(new View.LoginPage());
         }
     }
 }

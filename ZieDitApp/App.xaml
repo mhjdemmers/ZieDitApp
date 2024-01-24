@@ -83,6 +83,11 @@
                         <Setter Property="FontFamily" Value="IBMPlexSans-Regular" />
                         <Setter Property="CornerRadius" Value="0" />
                     </Style>
+                    <!--for entry-->
+                    <Style x:Key="EntryStyle" TargetType="Entry">
+                        <Setter Property="FontFamily" Value="IBMPlexSans-Regular" />
+                        <Setter Property="FontSize" Value="24" />
+                    </Style>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
