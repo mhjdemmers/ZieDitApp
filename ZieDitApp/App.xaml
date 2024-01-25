@@ -88,6 +88,17 @@
                         <Setter Property="FontFamily" Value="IBMPlexSans-Regular" />
                         <Setter Property="FontSize" Value="24" />
                     </Style>
+                    <!--for frame-->
+                    <Style x:Key="FrameStyleRed" TargetType="Frame">
+                        <Setter Property="CornerRadius" Value="0" />
+                        <Setter Property="BackgroundColor" Value="#e81a32" />
+                    </Style>
+                    <!--for frame-->
+                    <Style x:Key="FrameStyleWhite" TargetType="Frame">
+                        <Setter Property="CornerRadius" Value="0" />
+                        <Setter Property="BackgroundColor" Value="#ffff" />
+                        <Setter Property="BorderColor" Value="#000000" />
+                    </Style>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

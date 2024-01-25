@@ -12,16 +12,20 @@
             <local:Event Name="Event 4" Date="2022-12-04" Location="Location 4"/>
         </x:Array>
     </ContentPage.Resources>-->
-    <VerticalStackLayout>
+    <VerticalStackLayout Spacing="10" Padding="10">
         <Label 
             Text="Upcoming Events"
             VerticalOptions="Start" 
             HorizontalOptions="Center"
             Style="{StaticResource LabelStyle1Red}"/>
         <CollectionView ItemsSource="{Binding Events}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"
+                           ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Padding="10" BackgroundColor="#e81a32">
+                    <Frame Padding="10" Style="{StaticResource FrameStyleWhite}">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnFrameTapped"/>
                         </Frame.GestureRecognizers>
@@ -31,13 +35,14 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <Label Grid.Row="0" Text="{Binding Name}" Style="{StaticResource LabelStyle2White}" />
-                            <Label Grid.Row="1" Text="{Binding Date}" Style="{StaticResource LabelStyle3White}" />
-                            <Label Grid.Row="2" Text="{Binding Location}" Style="{StaticResource LabelStyle3White}" />
+                            <Label Grid.Row="0" Text="{Binding Name}" Style="{StaticResource LabelStyle2Black}" />
+                            <Label Grid.Row="1" Text="{Binding Date}" Style="{StaticResource LabelStyle3Black}" />
+                            <Label Grid.Row="2" Text="{Binding Location}" Style="{StaticResource LabelStyle3Black}" />
                         </Grid>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Button Text="Add Event" Style="{StaticResource ButtonStyleRed}" Clicked="OnAddEventButtonClicked" />
     </VerticalStackLayout>
 </ContentPage>

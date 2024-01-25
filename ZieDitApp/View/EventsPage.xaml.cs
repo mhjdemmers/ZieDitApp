@@ -12,4 +12,9 @@ public partial class EventsPage : ContentPage
     {
         Navigation.PushAsync(new EventPage());
     }
+
+    public void OnAddEventButtonClicked(object sender, EventArgs e)
+    {
+       
+    }
 }
