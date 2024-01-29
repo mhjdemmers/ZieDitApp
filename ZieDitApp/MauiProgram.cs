@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Camera.MAUI;
+using ZieDitApp.Repositories;
+using ZieDitApp.Model;
 
 namespace ZieDitApp
 {
@@ -20,7 +22,7 @@ namespace ZieDitApp
                     fonts.AddFont("IBMPlexSerif-Regular.ttf", "IBMPlexSerif-Regular");
                     fonts.AddFont("AvenirNextLTPro-Regular.ttf", "AvenirNextLTPro-Regular");
                 });
-
+            builder.Services.AddSingleton<BaseRepository<User>>();
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
