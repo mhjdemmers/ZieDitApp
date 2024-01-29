@@ -3,37 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ZieDitApp.View.EventPage"
              Title="Event">
-    <VerticalStackLayout Spacing="10" Padding="10">
-        <Label 
-        Text="Event 1"
-        VerticalOptions="Start" 
-        HorizontalOptions="Center"
-        Style="{StaticResource LabelStyle1Red}"/>
-        <CollectionView ItemsSource="{Binding Activities}">
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical"
-               ItemSpacing="10" />
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Frame Padding="10" Style="{StaticResource FrameStyleWhite}">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnFrameTapped"/>
-                        </Frame.GestureRecognizers>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Label Grid.Row="0" Text="{Binding Name}" Style="{StaticResource LabelStyle2Black}" />
-                            <Label Grid.Row="1" Text="{Binding Time}" Style="{StaticResource LabelStyle3Black}" />
-                            <Label Grid.Row="2" Text="{Binding Description}" Style="{StaticResource LabelStyle3Black}" />
-                        </Grid>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-        <Button Text="Add Activity" Style="{StaticResource ButtonStyleRed}" Clicked="OnAddActivityButtonClicked" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="10">
+            <Label 
+            Text="Event 1"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center"
+            Style="{StaticResource LabelStyle1Red}"/>
+            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc metus diam, scelerisque sed lacus aliquet, elementum scelerisque sem. Nam ac mauris quis elit feugiat mollis. Morbi pharetra elit et ullamcorper rutrum. Cras tincidunt auctor finibus. Donec id mauris fringilla ipsum fringilla consequat non id est. Vivamus molestie ex metus, id porttitor metus pellentesque at. Sed porttitor velit eget risus venenatis facilisis. Fusce et sapien vitae sem varius pharetra. Mauris ut tortor in elit venenatis fermentum quis non tellus. " Style="{StaticResource LabelStyle3Black}"/>
+            <CollectionView ItemsSource="{Binding Activities}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                   ItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10" Style="{StaticResource FrameStyleWhite}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnFrameTapped"/>
+                            </Frame.GestureRecognizers>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Text="{Binding Name}" Style="{StaticResource LabelStyle2Black}" />
+                                <Label Grid.Row="1" Text="{Binding Time}" Style="{StaticResource LabelStyle3Black}" />
+                                <Label Grid.Row="2" Text="{Binding Description}" Style="{StaticResource LabelStyle3Black}" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="Add Activity" Style="{StaticResource ButtonStyleRed}" Clicked="OnAddActivityButtonClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

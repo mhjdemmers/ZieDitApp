@@ -5,8 +5,10 @@
              Title="Activity">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Text="Activity 1"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center"
+            Style="{StaticResource LabelStyle1Red}"/>
+        <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc metus diam, scelerisque sed lacus aliquet, elementum scelerisque sem. Nam ac mauris quis elit feugiat mollis. Morbi pharetra elit et ullamcorper rutrum. Cras tincidunt auctor finibus. Donec id mauris fringilla ipsum fringilla consequat non id est. Vivamus molestie ex metus, id porttitor metus pellentesque at. Sed porttitor velit eget risus venenatis facilisis. Fusce et sapien vitae sem varius pharetra. Mauris ut tortor in elit venenatis fermentum quis non tellus. " Style="{StaticResource LabelStyle3Black}"/>
     </VerticalStackLayout>
 </ContentPage>
