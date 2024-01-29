@@ -5,10 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using ZieDitApp.Abstractions;
 
 namespace ZieDitApp.Model
 {
-    class User
+    [SQLite.Table("Users")]
+    public class User : TableData
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
