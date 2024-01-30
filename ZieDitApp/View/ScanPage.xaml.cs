@@ -1,3 +1,5 @@
+using ZieDitApp.ViewModel;
+
 namespace ZieDitApp.View;
 
 public partial class ScanPage : ContentPage
@@ -5,7 +7,7 @@ public partial class ScanPage : ContentPage
 	public ScanPage()
 	{
 		InitializeComponent();
-	}
+    }
     private void cameraView_CamerasLoaded(object sender, EventArgs e)
     {
         cameraView.Camera = cameraView.Cameras.First();
@@ -17,8 +19,17 @@ public partial class ScanPage : ContentPage
         });
     }
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private void cameraView_BarcodeDetected(object sender, 
+        Camera.MAUI.ZXingHelper.BarcodeEventArgs args)
     {
-        myImage.Source = cameraView.GetSnapShot();
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            barcodeResult.Text = $"{args.Result[0].BarcodeFormat} : {args.Result[0].Text}";
+        });
     }
+
+    //private void Button_Clicked(object sender, EventArgs e)
+    //{
+    //    myImage.Source = cameraView.GetSnapShot();
+    //}
 }

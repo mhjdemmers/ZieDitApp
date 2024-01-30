@@ -10,11 +10,13 @@
         VerticalOptions="Fill"
         HorizontalOptions="Fill">
         <cv:CameraView x:Name="cameraView" WidthRequest="300" HeightRequest="300"
-               CamerasLoaded="cameraView_CamerasLoaded"/>
+               CamerasLoaded="cameraView_CamerasLoaded" BarCodeDetectionEnabled="True"
+                       BarcodeDetected="cameraView_BarcodeDetected"/>
 
-        <Button Text="Scan!" Clicked="Button_Clicked" Style="{StaticResource ButtonStyleRed}"/>
+        <Label x:Name="barcodeResult" FontSize="20"/>
+        <!--<Button Text="Scan!" Clicked="Button_Clicked" Style="{StaticResource ButtonStyleRed}"/>
 
-        <Image x:Name="myImage" WidthRequest="200" HeightRequest="200" />
+        <Image x:Name="myImage" WidthRequest="200" HeightRequest="200" />-->
         
     </VerticalStackLayout>
 </ContentPage>
