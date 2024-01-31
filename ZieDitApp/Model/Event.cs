@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using ZieDitApp.Abstractions;
 
 namespace ZieDitApp.Model
 {
-    public class Event
+    [SQLite.Table("Events")]
+    public class Event : TableData
     {
-        public Event()
-        {
-        }
+        
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Name { get; set; }
