@@ -7,9 +7,9 @@
         <Label Text="Zie Dit" VerticalOptions="Center" HorizontalOptions="Start" Style="{StaticResource LabelStyle1Red}"/>
         <Label Text="Login" Style="{StaticResource LabelStyle2Black}"/>
         <Entry Placeholder="UserName" Style="{StaticResource EntryStyle}" 
-               x:Name="UserName" IsSpellCheckEnabled="False" Text="{Binding UserName}" Keyboard="Numeric"/>
+               x:Name="UserName" IsSpellCheckEnabled="False" Text="{Binding UserName}"/>
         <Entry Placeholder="PassWord" Style="{StaticResource EntryStyle}"
-                x:Name="Password" IsPassword="True" Text="{Binding Password}" Keyboard="Numeric"/>
+                x:Name="Password" IsPassword="True" Text="{Binding Password}" />
         <Button Text="Login" Style="{StaticResource ButtonStyleRed}" Clicked="OnLoginClicked" 
                 x:Name="Signin" Command="{Binding LoginCommand}"/>
     </VerticalStackLayout>
