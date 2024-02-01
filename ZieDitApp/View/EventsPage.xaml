@@ -4,14 +4,7 @@
              xmlns:local="clr-namespace:ZieDitApp.Model"
              x:Class="ZieDitApp.View.EventsPage"
              Title="Events">
-    <!--<ContentPage.Resources>
-        <x:Array x:Key="Events" Type="Event">
-            <local:Event Name="Event 1" Date="2022-12-01" Location="Location 1"/>
-            <local:Event Name="Event 2" Date="2022-12-02" Location="Location 2"/>
-            <local:Event Name="Event 3" Date="2022-12-03" Location="Location 3"/>
-            <local:Event Name="Event 4" Date="2022-12-04" Location="Location 4"/>
-        </x:Array>
-    </ContentPage.Resources>-->
+    
     <VerticalStackLayout Spacing="10" Padding="10">
         <Label 
             Text="Upcoming Events"

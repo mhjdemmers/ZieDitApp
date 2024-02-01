@@ -12,10 +12,12 @@ namespace ZieDitApp.ViewModel
 {
     public class EventViewModel
     {
+        public Event Event { get; set; }
         public ObservableCollection<Activity> Activities { get; set; }
 
-        public EventViewModel()
+        public EventViewModel(Event eventItem)
         {
+            Event = eventItem;
             Activities = new ObservableCollection<Activity>
             {
                 new Activity { Name = "Activity 1", Time = new DateTime(2022, 12, 1), Description = "Location 1" },

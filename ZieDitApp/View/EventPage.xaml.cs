@@ -1,21 +1,27 @@
 namespace ZieDitApp.View;
+
+using ZieDitApp.Model;
 using ZieDitApp.ViewModel;
 
 public partial class EventPage : ContentPage
 {
-	public EventPage()
+	public EventPage(Event eventItem)
 	{
-		InitializeComponent();
-        BindingContext = new EventViewModel();
+        InitializeComponent();
+        BindingContext = new EventViewModel(eventItem);
+        InitializeComponent();
     }
+
 
     public void OnFrameTapped(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new ActivityPage());
+        var frame = (Frame)sender;
+        var activity = (Activity)frame.BindingContext;
+        Navigation.PushAsync(new ActivityPage(activity));
     }
 
     public void OnAddActivityButtonClicked(object sender, EventArgs e)
     {
-
+        Navigation.PushAsync(new AddActivityPage());
     }
 }

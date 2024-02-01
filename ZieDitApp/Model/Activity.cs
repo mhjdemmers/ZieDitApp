@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using ZieDitApp.Abstractions;
 
 namespace ZieDitApp.Model
 {
-    public class Activity
+    [SQLite.Table("Activities")]
+    public class Activity : TableData
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
