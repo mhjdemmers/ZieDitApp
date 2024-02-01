@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ZieDitApp.View.ActivityPage"
              Title="Activity">
-    <VerticalStackLayout>
+    <VerticalStackLayout Spacing="10" Padding="10">
         <!--<Label 
             Text="Activity 1"
             VerticalOptions="Start" 
