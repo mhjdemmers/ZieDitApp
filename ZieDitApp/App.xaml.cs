@@ -7,6 +7,8 @@ namespace ZieDitApp
     public partial class App : Application
     {
         public static BaseRepository<User>? UserRepo { get; private set; }
+        public static User CurrentUser { get; set; }
+
         public App(BaseRepository<User> studentRepo)
         {
             InitializeComponent();

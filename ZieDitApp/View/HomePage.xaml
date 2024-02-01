@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ZieDitApp.View.HomePage"
@@ -10,6 +9,12 @@
             <Image Source="your_logo_image_path.png" WidthRequest="50" HeightRequest="50" />
             <Label Text="Zie Dit" VerticalOptions="Center" HorizontalOptions="Start" Style="{StaticResource LabelStyle1Red}"/>
         </HorizontalStackLayout>
+
+        <!-- Display Username -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start">
+            <Label Text="User: " Style="{StaticResource LabelStyle2Red}" />
+            <Label Text="{Binding UserName}" Style="{StaticResource LabelStyle2Red}" />
+        </StackLayout>
 
         <!-- Buttons -->
         <Button Text="Events" Clicked="OnEventsClicked" Style="{StaticResource ButtonStyleRed}"/>

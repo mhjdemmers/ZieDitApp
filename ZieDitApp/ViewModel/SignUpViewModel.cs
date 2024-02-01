@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using ZieDitApp.Model;
 using ZieDitApp.Repositories;
-using ZieDitApp.View;
 
 namespace ZieDitApp.ViewModel
 {
-    public class LoginViewModel : BaseViewModel
+    public class SignUpViewModel : BaseViewModel
     {
         private string _userName;
         private string _password;
         private UserRepository _userRepository;
         private INavigation _navigation;
 
-        public LoginViewModel(INavigation navigation)
+        public SignUpViewModel(INavigation navigation)
         {
             _userRepository = new UserRepository();
             _navigation = navigation;
-            LoginCommand = new Command(OnLoginClicked);
+            SignUpCommand = new Command(OnSignUpClicked);
         }
 
         public string UserName
@@ -35,22 +35,23 @@ namespace ZieDitApp.ViewModel
             set => SetProperty(ref _password, value);
         }
 
-        public ICommand LoginCommand { get; }
+        public ICommand SignUpCommand { get; }
 
-        private async void OnLoginClicked()
+        private async void OnSignUpClicked()
         {
-            var user = _userRepository.GetUserByUsernameAndPassword(UserName, Password);
-            if (user != null)
+            var newUser = new User { Name = UserName, Password = Password };
+            try
             {
-                // User found. Set the CurrentUser property and navigate to the HomePage.
-                App.CurrentUser = user;
-                await _navigation.PushAsync(new HomePage());
+                _userRepository.AddUser(newUser);
+                // User added. Navigate back to the LoginPage.
+                await _navigation.PopAsync();
             }
-            else
+            catch (Exception ex)
             {
-                // User not found. Display an error message.
-                await App.Current.MainPage.DisplayAlert("Error", "Invalid username or password", "OK");
+                // User not added. Display an error message.
+                await App.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
             }
         }
     }
+
 }

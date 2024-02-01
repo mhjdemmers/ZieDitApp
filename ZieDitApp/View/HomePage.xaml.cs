@@ -1,11 +1,15 @@
+using ZieDitApp.ViewModel;
+
 namespace ZieDitApp.View;
 
 public partial class HomePage : ContentPage
 {
-	public HomePage()
+
+    public HomePage()
 	{
 		InitializeComponent();
-	}
+        BindingContext = new HomeViewModel();
+    }
 	void OnEventsClicked(object sender, EventArgs e)
 	{
 		Navigation.PushAsync(new EventsPage());
