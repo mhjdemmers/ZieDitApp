@@ -7,13 +7,13 @@ using ZieDitApp.Model;
 
 namespace ZieDitApp.Repositories
 {
-    internal class ActivityRepository : BaseRepository<Activity>
+    internal class RoomRepository : BaseRepository<Room>
     {
-        public Activity GetActivityById(int id)
+        public Room GetById(int id)
         {
             try
             {
-                return connection.Table<Activity>().FirstOrDefault(x => x.Id == id);
+                return connection.Table<Room>().FirstOrDefault(x => x.Id == id);
             }
             catch (Exception ex)
             {
@@ -22,11 +22,11 @@ namespace ZieDitApp.Repositories
             return null;
         }
 
-        public List<Activity> GetAllActivities()
+        public List<Room> GetAllRooms()
         {
             try
             {
-                return connection.Table<Activity>().ToList();
+                return connection.Table<Room>().ToList();
             }
             catch (Exception ex)
             {
@@ -36,11 +36,11 @@ namespace ZieDitApp.Repositories
         }
 
 
-        public void AddActivity(Activity activity)
+        public void AddRoom(Room room)
         {
             try
             {
-                SaveEntity(activity);
+                SaveEntity(room);
             }
             catch (Exception ex)
             {
@@ -48,28 +48,16 @@ namespace ZieDitApp.Repositories
             }
         }
 
-        public void DeleteActivity(Activity activity)
+        public void DeleteRoom(Room room)
         {
             try
             {
-                DeleteEntity(activity);
+                DeleteEntity(room);
             }
             catch (Exception ex)
             {
                 StatusMessage = $"Error: {ex.Message}";
             }
         }
-        //public List<Activity> GetActivitiesByEventId(int eventId)
-        //{
-        //    try
-        //    {
-        //        return connection.Table<Activity>().Where(x => x.EventId == eventId).ToList();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        StatusMessage = $"Error: {ex.Message}";
-        //    }
-        //    return null;
-        //}   
     }
 }
