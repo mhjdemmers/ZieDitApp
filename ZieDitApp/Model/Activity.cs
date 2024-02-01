@@ -17,5 +17,8 @@ namespace ZieDitApp.Model
         public string Description { get; set; }
         public DateTime Time { get; set; }
 
+        
+        public int PresenterId { get; set; }
+        public int EventId { get; set; }
     }
 }
