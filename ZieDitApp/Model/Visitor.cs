@@ -11,7 +11,6 @@ namespace ZieDitApp.Model
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public List<Event>? EnrolledEvents { get; set; }
-        public List<Activity>? EnrolledActivities { get; set; }
+        
     }
 }

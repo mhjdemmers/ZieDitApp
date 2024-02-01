@@ -9,11 +9,23 @@ namespace ZieDitApp.Repositories
 {
     internal class EventRepository : BaseRepository<Event>
     {
-        public Activity GetEventById(int id)
+        public Event GetEventById(int id)
         {
             try
             {
-                return connection.Table<Activity>().FirstOrDefault(x => x.Id == id);
+                return connection.Table<Event>().FirstOrDefault(x => x.Id == id);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+            }
+            return null;
+        }
+        public List<Event> GetAllEvents()
+        {
+            try
+            {
+                return connection.Table<Event>().ToList();
             }
             catch (Exception ex)
             {
@@ -27,6 +39,17 @@ namespace ZieDitApp.Repositories
             try
             {
                 SaveEntity(eventItem);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+            }
+        }
+        public void DeleteEvent(Event eventItem)
+        {
+            try
+            {
+                DeleteEntity(eventItem);
             }
             catch (Exception ex)
             {
