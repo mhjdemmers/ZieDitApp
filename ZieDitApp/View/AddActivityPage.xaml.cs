@@ -26,5 +26,8 @@ public partial class AddActivityPage : ContentPage
         NameEntry.Text = string.Empty;
         DescriptionEntry.Text = string.Empty;
         TimeEntry.Text = string.Empty;
+
+        // Go back to the previous page
+        Navigation.PopAsync();
     }
 }

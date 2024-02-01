@@ -7,21 +7,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using ZieDitApp.Model;
+using ZieDitApp.Repositories;
 
 namespace ZieDitApp.ViewModel
 {
-    public class EventsViewModel
+    public class EventsViewModel : BaseViewModel
     {
         public ObservableCollection<Event> Events { get; set; }
+        private EventRepository _eventRepository;
 
         public EventsViewModel()
         {
-            Events = new ObservableCollection<Event>
+            _eventRepository = new EventRepository();
+            var events = _eventRepository.GetAllEvents();
+            if (events != null)
             {
-                new Event { Name = "Event 1", Date = new DateTime(2022, 12, 1), Location = "Location 1" },
-                new Event { Name = "Event 2", Date = new DateTime(2022, 12, 2), Location = "Location 2" },
-                // More events here
-            };
+                Events = new ObservableCollection<Event>(events);
+            }
+            else
+            {
+                Events = new ObservableCollection<Event>();
+            }
         }
     }
 }

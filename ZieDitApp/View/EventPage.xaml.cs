@@ -9,9 +9,7 @@ public partial class EventPage : ContentPage
 	{
         InitializeComponent();
         BindingContext = new EventViewModel(eventItem);
-        InitializeComponent();
     }
-
 
     public void OnFrameTapped(object sender, EventArgs e)
     {

@@ -11,9 +11,9 @@ public partial class AddEventPage : ContentPage
 		InitializeComponent();
 	}
 
-	public void OnAddButtonClicked(object sender, EventArgs e)
-	{
-		var eventItem = new Event
+    public void OnAddButtonClicked(object sender, EventArgs e)
+    {
+        var eventItem = new Event
         {
             Name = NameEntry.Text,
             Location = LocationEntry.Text,
@@ -27,6 +27,9 @@ public partial class AddEventPage : ContentPage
         NameEntry.Text = string.Empty;
         LocationEntry.Text = string.Empty;
         DateEntry.Text = string.Empty;
+
+        // Go back to the previous page
+        Navigation.PopAsync();
     }
 
 }
