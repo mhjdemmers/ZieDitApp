@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using ZieDitApp.Model;
 using ZieDitApp.Repositories;
+using ZieDitApp.ViewModel;
 
 namespace ZieDitApp.View;
 
@@ -8,6 +9,7 @@ public partial class AddEventPage : ContentPage
 {
 	public AddEventPage()
 	{
+        BindingContext = new AddEventViewModel();
 		InitializeComponent();
 	}
 
@@ -17,7 +19,8 @@ public partial class AddEventPage : ContentPage
         {
             Name = NameEntry.Text,
             Location = LocationEntry.Text,
-            Date = DateTime.Parse(DateEntry.Text),
+            //Date = DateTime.Parse(DateEntry.Text),
+            Date = DatePicker.Date,
             OrganizerId = App.CurrentUser.Id
         };
 
@@ -27,7 +30,6 @@ public partial class AddEventPage : ContentPage
         // Clear the fields
         NameEntry.Text = string.Empty;
         LocationEntry.Text = string.Empty;
-        DateEntry.Text = string.Empty;
 
         // Go back to the previous page
         Navigation.PopAsync();

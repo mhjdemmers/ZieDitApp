@@ -4,13 +4,15 @@
              x:Class="ZieDitApp.View.AddEventPage"
              Title="AddEventPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
         <Entry x:Name="NameEntry" Placeholder="Name"/>
+        
         <Entry x:Name="LocationEntry" Placeholder="Location"/>
-        <Entry x:Name="DateEntry" Placeholder="Date"/>
+
+        <DatePicker x:Name="DatePicker" MinimumDate="{Binding MinimumDate}"
+            MaximumDate="{Binding MaximumDate}"
+            Date="{Binding Date}" />
+        
         <Button Text="Add" Style="{StaticResource ButtonStyleRed}" Clicked="OnAddButtonClicked"/>
+        
     </VerticalStackLayout>
 </ContentPage>
