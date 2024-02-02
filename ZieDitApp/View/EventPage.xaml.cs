@@ -1,13 +1,18 @@
 namespace ZieDitApp.View;
 
 using ZieDitApp.Model;
+using ZieDitApp.Repositories;
 using ZieDitApp.ViewModel;
 
 public partial class EventPage : ContentPage
 {
-	public EventPage(Event eventItem)
+    private Event _eventItem;
+    private EventUserRepository _eventUserRepository;
+    public EventPage(Event eventItem)
 	{
         InitializeComponent();
+        _eventUserRepository = new EventUserRepository();
+        _eventItem = eventItem;
         BindingContext = new EventViewModel(eventItem);
     }
 
@@ -21,5 +26,16 @@ public partial class EventPage : ContentPage
     public void OnAddActivityButtonClicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new AddActivityPage());
+    }
+
+    private void OnInschrijvenButtonClicked(object sender, EventArgs e)
+    {
+        EventUser eventUser = new EventUser()
+        {
+            Event = _eventItem.Id,
+            User = App.CurrentUser.Id
+        };
+        _eventUserRepository.AddEventUser(eventUser);
+
     }
 }

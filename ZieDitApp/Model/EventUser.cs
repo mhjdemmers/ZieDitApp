@@ -4,16 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using ZieDitApp.Abstractions;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ZieDitApp.Model
 {
-    class EventUser
+    [SQLite.Table("EventUsers")]
+    public class EventUser : TableData
     {
         [PrimaryKey, AutoIncrement]
-        public int EventUserId { get; set; }
+        public int Id { get; set; }
 
-        public int EventId { get; set; }
-
-        public int UserId { get; set; }
+        public int Event { get; set; }
+        
+        public int User { get; set; }
     }
 }
