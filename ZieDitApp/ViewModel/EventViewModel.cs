@@ -8,25 +8,24 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using ZieDitApp.Model;
 using ZieDitApp.Repositories;
+using Microsoft.Extensions.Logging;
 
 namespace ZieDitApp.ViewModel
 {
     public class EventViewModel :BaseViewModel
     {
+        public string Registered {  get; set; }
         public Event Event { get; set; }
         private ActivityRepository _activityRepository;
+        private EventUserRepository _eventUserRepository;
         public ObservableCollection<Activity> Activities { get; set; }
 
         public EventViewModel(Event eventItem)
         {
             _activityRepository = new ActivityRepository();
+            _eventUserRepository = new EventUserRepository();
             Event = eventItem;
-            //Activities = new ObservableCollection<Activity>
-            //{
-            //    new Activity { Name = "Activity 1", Time = new DateTime(2022, 12, 1), Description = "Location 1" },
-            //    new Activity { Name = "Activity 2", Time = new DateTime(2022, 12, 2), Description = "Location 2" },
-            //    // More events here
-            //};
+           
             var activities = _activityRepository.GetAllActivities();
             if (activities != null)
             {
@@ -36,6 +35,27 @@ namespace ZieDitApp.ViewModel
             {
                 Activities = new ObservableCollection<Activity>();
             }
+
+            Registered = IsRegistered(Event);
         }
+
+        private string IsRegistered(Event eventIten)
+        {
+            int userId = App.CurrentUser.Id;
+            int eventId = eventIten.Id;
+            EventUser eventUserRegistered = _eventUserRepository.CheckRegisteredUser(userId, eventId);
+
+            if (eventUserRegistered != null)
+            {
+
+                return "Je bent ingeschreven.";
+            }
+            else 
+            {
+                return "Je bent niet ingeschreven.";
+            }
+
+        }
+        
     }
 }

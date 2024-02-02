@@ -38,6 +38,7 @@
             </CollectionView>
             <Button Text="Add Activity" Style="{StaticResource ButtonStyleRed}" Clicked="OnAddActivityButtonClicked" />
             <Button Text="Inschrijven" Style="{StaticResource ButtonStyleRed}" Clicked="OnInschrijvenButtonClicked" />
+            <Label x:Name="RegisteredLabel" Text="{Binding Registered}" Style="{StaticResource LabelStyle3Black}"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
