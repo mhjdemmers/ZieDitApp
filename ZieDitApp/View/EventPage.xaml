@@ -37,6 +37,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
             <Button Text="Add Activity" Style="{StaticResource ButtonStyleRed}" Clicked="OnAddActivityButtonClicked" />
+            <Button Text="Inschrijven" Style="{StaticResource ButtonStyleRed}" Clicked="OnInschrijvenButtonClicked" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
