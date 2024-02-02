@@ -4,9 +4,11 @@
              x:Class="ZieDitApp.View.LoginPage"
              Title="Login">
     <VerticalStackLayout Spacing="10" Padding="10">
-        
-        <Label Text="Zie Dit" VerticalOptions="Center" HorizontalOptions="Start" Style="{StaticResource LabelStyle1Red}"/>
-        
+
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+            <Label Text="Zie Dit" VerticalOptions="Center" HorizontalOptions="Start" Style="{StaticResource LabelStyle1Red}"/>
+            <Image Source="logozuyd.png" WidthRequest="80" HeightRequest="80" />
+        </HorizontalStackLayout>
         <Label Text="Login" Style="{StaticResource LabelStyle2Black}"/>
         
         <!--<Entry Placeholder="UserName" Style="{StaticResource EntryStyle}" 

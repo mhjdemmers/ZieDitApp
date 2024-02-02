@@ -85,6 +85,7 @@
 	  <None Remove="Resources\Fonts\IBMPlexSerif-SemiBoldItalic.ttf" />
 	  <None Remove="Resources\Fonts\IBMPlexSerif-Thin.ttf" />
 	  <None Remove="Resources\Fonts\IBMPlexSerif-ThinItalic.ttf" />
+	  <None Remove="Resources\Images\LogoZUYD.png" />
 	</ItemGroup>
 
 	<ItemGroup>
