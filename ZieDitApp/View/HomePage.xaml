@@ -5,9 +5,9 @@
     <VerticalStackLayout Spacing="10" Padding="10">
 
         <!-- Logo and Text -->
-        <HorizontalStackLayout>
-            <Image Source="your_logo_image_path.png" WidthRequest="50" HeightRequest="50" />
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
             <Label Text="Zie Dit" VerticalOptions="Center" HorizontalOptions="Start" Style="{StaticResource LabelStyle1Red}"/>
+            <Image Source="logozuyd.png" WidthRequest="80" HeightRequest="80" />
         </HorizontalStackLayout>
 
         <!-- Display Username -->
