@@ -16,7 +16,8 @@ public partial class AddActivityPage : ContentPage
         {
             Name = NameEntry.Text,
             Description = DescriptionEntry.Text,
-            Time = DateTime.Parse(TimeEntry.Text)
+            Time = TimePicker.Time
+            //Time = DateTime.Parse(TimeEntry.Text)
         };
 
         var activityRepository = new ActivityRepository();

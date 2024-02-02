@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ZieDitApp.ViewModel
 {
-
     class AddEventViewModel
     {
         public DateTime MinimumDate = new DateTime(2018, 1, 1);
