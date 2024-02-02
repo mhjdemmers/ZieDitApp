@@ -17,7 +17,8 @@ public partial class AddEventPage : ContentPage
         {
             Name = NameEntry.Text,
             Location = LocationEntry.Text,
-            Date = DateTime.Parse(DateEntry.Text)
+            Date = DateTime.Parse(DateEntry.Text),
+            OrganizerId = App.CurrentUser.Id
         };
 
         var eventRepository = new EventRepository();
