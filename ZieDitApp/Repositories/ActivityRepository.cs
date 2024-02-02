@@ -59,6 +59,21 @@ namespace ZieDitApp.Repositories
                 StatusMessage = $"Error: {ex.Message}";
             }
         }
+
+        public List<Activity> GetActivitiesByEvent(int eventId)
+        {
+            try
+            {
+                return connection.Table<Activity>().Where(x => x.EventId == eventId).ToList();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+            }
+            return null;
+        }
+
+
         //public List<Activity> GetActivitiesByEventId(int eventId)
         //{
         //    try
