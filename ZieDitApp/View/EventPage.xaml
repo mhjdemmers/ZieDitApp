@@ -36,6 +36,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <Button Text="Delete Event" Style="{StaticResource ButtonStyleRed}" Clicked="OnDeleteEventButtonClicked" />
             <Button Text="Add Activity" Style="{StaticResource ButtonStyleRed}" Clicked="OnAddActivityButtonClicked" />
             <HorizontalStackLayout>
                 <Button Text="Inschrijven" Style="{StaticResource ButtonStyleRed}" Clicked="OnInschrijvenButtonClicked" />

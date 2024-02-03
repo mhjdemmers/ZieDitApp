@@ -9,10 +9,12 @@ public partial class EventPage : ContentPage
 {
     private Event _eventItem;
     private EventUserRepository _eventUserRepository;
+    private EventRepository _eventRepository;
     public EventPage(Event eventItem)
 	{
         InitializeComponent();
         _eventUserRepository = new EventUserRepository();
+        _eventRepository = new EventRepository();
         _eventItem = eventItem;
         BindingContext = new EventViewModel(eventItem);
     }
@@ -24,6 +26,11 @@ public partial class EventPage : ContentPage
         Navigation.PushAsync(new ActivityPage(activity));
     }
 
+    public void OnDeleteEventButtonClicked(object sender, EventArgs e)
+    {
+        _eventRepository.DeleteEvent(_eventItem);
+        Navigation.PopAsync();
+    }
     public void OnAddActivityButtonClicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new AddActivityPage());
