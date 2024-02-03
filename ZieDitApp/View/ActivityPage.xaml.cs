@@ -6,6 +6,7 @@ namespace ZieDitApp.View;
 public partial class ActivityPage : ContentPage
 {
     private Activity _activity;
+    private ActivityRepository _activityRepository;
     private ActivityUserRepository _activityUserRepository;
 
     public ActivityPage(Activity activity)
@@ -13,7 +14,14 @@ public partial class ActivityPage : ContentPage
         InitializeComponent();
         _activity = activity;
         _activityUserRepository = new ActivityUserRepository();
+        _activityRepository = new ActivityRepository();
         BindingContext = new ActivityViewModel(activity); 
+    }
+
+    private void OnDeleteActivityButtonClicked(object sender, EventArgs e)
+    {
+        _activityRepository.DeleteActivity(_activity);
+        Navigation.PopAsync();
     }
 
     private void OnInschrijvenButtonClicked(object sender, EventArgs e)
