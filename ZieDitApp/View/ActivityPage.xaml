@@ -12,5 +12,6 @@
         <!--<Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc metus diam, scelerisque sed lacus aliquet, elementum scelerisque sem. Nam ac mauris quis elit feugiat mollis. Morbi pharetra elit et ullamcorper rutrum. Cras tincidunt auctor finibus. Donec id mauris fringilla ipsum fringilla consequat non id est. Vivamus molestie ex metus, id porttitor metus pellentesque at. Sed porttitor velit eget risus venenatis facilisis. Fusce et sapien vitae sem varius pharetra. Mauris ut tortor in elit venenatis fermentum quis non tellus. " Style="{StaticResource LabelStyle3Black}"/>-->
         <Label Text="{Binding Name}" Style="{StaticResource LabelStyle1Red}" HorizontalOptions="Center"/>
         <Label Text="{Binding Description}" Style="{StaticResource LabelStyle3Black}"/>
+        <Label x:Name="RegisteredLabel" Text="{Binding Registered}" Style="{StaticResource LabelStyle3Black}"/>
     </VerticalStackLayout>
 </ContentPage>

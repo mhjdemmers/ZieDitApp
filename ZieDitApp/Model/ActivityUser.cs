@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
+using ZieDitApp.Abstractions;
 
 namespace ZieDitApp.Model
 {
-    class ActivityUser
+    [SQLite.Table("ActivityUsers")]
+    class ActivityUser : TableData
     {
         [PrimaryKey, AutoIncrement]
-        public int ActivityUserId { get; set; }
+        public int Id { get; set; }
 
-        public int ActivityId { get; set; }
+        public int Activity { get; set; }
 
-        public int UserId { get; set; }
+        public int User { get; set; }
     }
 }
