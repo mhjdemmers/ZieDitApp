@@ -23,6 +23,18 @@ namespace ZieDitApp.Repositories
             }
         }
 
+         public void DeleteEventUser(EventUser eventUser)
+        {
+            try
+            {
+                DeleteEntity(eventUser);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+            }
+        }
+
         public EventUser CheckRegisteredUser(int userId, int eventId)
         {
             try
