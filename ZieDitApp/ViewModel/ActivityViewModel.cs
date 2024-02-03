@@ -35,7 +35,7 @@ namespace ZieDitApp.ViewModel
 
             Registered = IsRegistered(Activity);
         }
-        private string IsRegistered(Activity activity)
+        public string IsRegistered(Activity activity)
         {
             int userId = App.CurrentUser.Id;
             int activityId = activity.Id;

@@ -39,22 +39,20 @@ namespace ZieDitApp.ViewModel
             Registered = IsRegistered(Event);
         }
 
-        private string IsRegistered(Event eventIten)
+        public string IsRegistered(Event eventItem)
         {
             int userId = App.CurrentUser.Id;
-            int eventId = eventIten.Id;
+            int eventId = eventItem.Id;
             EventUser eventUserRegistered = _eventUserRepository.CheckRegisteredUser(userId, eventId);
 
             if (eventUserRegistered != null)
             {
-
                 return "Je bent ingeschreven.";
             }
-            else 
+            else
             {
                 return "Je bent niet ingeschreven.";
             }
-
         }
         
     }

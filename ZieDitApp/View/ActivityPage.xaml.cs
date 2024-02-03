@@ -11,9 +11,9 @@ public partial class ActivityPage : ContentPage
     public ActivityPage(Activity activity)
     {
         InitializeComponent();
-        BindingContext = activity;
         _activity = activity;
         _activityUserRepository = new ActivityUserRepository();
+        BindingContext = new ActivityViewModel(activity); 
     }
 
     private void OnInschrijvenButtonClicked(object sender, EventArgs e)
@@ -24,5 +24,6 @@ public partial class ActivityPage : ContentPage
             User = App.CurrentUser.Id
         };
         _activityUserRepository.AddActivityUser(activityUser);
+
     }
 }
