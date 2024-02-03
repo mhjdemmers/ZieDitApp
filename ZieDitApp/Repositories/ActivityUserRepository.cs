@@ -20,6 +20,17 @@ namespace ZieDitApp.Repositories
                 StatusMessage = $"Error: {ex.Message}";
             }
         }
+        public void DeleteActivityUser(ActivityUser activityUser)
+        {
+            try
+            {
+                DeleteEntity(activityUser);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+            }
+        }
 
         public ActivityUser CheckRegisteredUser(int userId, int eventId)
         {

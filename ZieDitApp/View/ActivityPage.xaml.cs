@@ -26,4 +26,25 @@ public partial class ActivityPage : ContentPage
         _activityUserRepository.AddActivityUser(activityUser);
 
     }
+
+    private void OnUitschrijvenButtonClicked(object sender, EventArgs e)
+    {
+        int userId = App.CurrentUser.Id;
+        int activityId = _activity.Id;
+        ActivityUser activityUser = _activityUserRepository.CheckRegisteredUser(userId, activityId);
+
+        if (activityUser != null)
+        {
+            _activityUserRepository.DeleteActivityUser(activityUser);
+
+            //// Update the Registered property
+            //var viewModel = BindingContext as ActivityViewModel;
+            //if (viewModel != null)
+            //{
+            //    viewModel.Registered = viewModel.IsRegistered(_activity);
+            //}
+        }
+    }
 }
+
+
