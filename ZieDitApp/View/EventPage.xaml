@@ -47,8 +47,8 @@
             <Button Text="Refresh" Command="{Binding RefreshCommand}" Style="{StaticResource ButtonStyleRed}" />
             
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                <Button Text="Inschrijven" Style="{StaticResource ButtonStyleRed}" Clicked="OnInschrijvenButtonClicked" />
-                <Button Text="Uitschrijven" Style="{StaticResource ButtonStyleRed}" Clicked="OnUitschrijvenButtonClicked" />
+                <Button Text="Inschrijven" Style="{StaticResource ButtonStyleRed}" Command="{Binding RegisterCommand}" />
+                <Button Text="Uitschrijven" Style="{StaticResource ButtonStyleRed}" Command="{Binding UnregisterCommand}" />
             </HorizontalStackLayout>
             
             <Label x:Name="RegisteredLabel" Text="{Binding Registered}" Style="{StaticResource LabelStyle3Black}"/>

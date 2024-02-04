@@ -23,6 +23,9 @@ namespace ZieDitApp.ViewModel
         private EventUserRepository _eventUserRepository;
         public ObservableCollection<Activity> Activities { get; set; }
         public ICommand RefreshCommand { get; }
+        public ICommand UpdateRegisteredQRCommand { get; }
+        public ICommand RegisterCommand { get; }
+        public ICommand UnregisterCommand { get; }
 
         public EventViewModel(Event eventItem)
         {
@@ -45,9 +48,16 @@ namespace ZieDitApp.ViewModel
             //    Activities = new ObservableCollection<Activity>();
             //}
 
-            Registered = IsRegistered(Event);
-            Code = GetCode(Event);
-            QRVisible = Code != Guid.Empty ? "True" : "False";
+            UpdateRegisteredQR();
+
+            //UpdateRegisteredQRCommand = new Command(UpdateRegisteredQR);
+
+            RegisterCommand = new Command(Register);
+            UnregisterCommand = new Command(Unregister);
+
+            //Registered = IsRegistered(Event);
+            //Code = GetCode(Event);
+            //QRVisible = Code != Guid.Empty ? "True" : "False";
         }
 
         public string IsRegistered(Event eventItem)
@@ -88,6 +98,38 @@ namespace ZieDitApp.ViewModel
 
             Activities = new ObservableCollection<Activity>(activities);
 
+        }
+
+        private void UpdateRegisteredQR()
+        {
+            Registered = IsRegistered(Event);
+            Code = GetCode(Event);
+            QRVisible = Code != Guid.Empty ? "True" : "False";
+        }
+
+        private void Register()
+        {
+            EventUser eventUser = new EventUser()
+            {
+                Event = Event.Id,
+                User = App.CurrentUser.Id,
+                Code = Guid.NewGuid()
+            };
+            _eventUserRepository.AddEventUser(eventUser);
+            UpdateRegisteredQR();
+        }
+
+        private void Unregister()
+        {
+            int userId = App.CurrentUser.Id;
+            int eventId = Event.Id;
+            EventUser eventUser = _eventUserRepository.CheckRegisteredUser(userId, eventId);
+
+            if (eventUser != null)
+            {
+                _eventUserRepository.DeleteEventUser(eventUser);
+                UpdateRegisteredQR();
+            }
         }
 
     }
