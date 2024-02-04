@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
              x:Class="ZieDitApp.View.EventPage"
              Title="Event">
     <ScrollView>
@@ -43,6 +44,10 @@
                 <Button Text="Uitschrijven" Style="{StaticResource ButtonStyleRed}" Clicked="OnUitschrijvenButtonClicked" />
             </HorizontalStackLayout>
             <Label x:Name="RegisteredLabel" Text="{Binding Registered}" Style="{StaticResource LabelStyle3Black}"/>
+            <cv:BarcodeImage IsVisible="{Binding QRVisible}" WidthRequest="400" HeightRequest="400"
+                             BarcodeWidth="400" BarcodeHeight="400" BarcodeMargin="0"
+                             BarcodeBackground="White" BarcodeForeground="Black"
+                             BarcodeFormat="QR_CODE" Barcode="{Binding Code}"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

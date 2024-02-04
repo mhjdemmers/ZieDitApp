@@ -15,6 +15,8 @@ namespace ZieDitApp.ViewModel
     public class EventViewModel :BaseViewModel
     {
         public string Registered {  get; set; }
+        public Guid Code { get; set; }
+        public string QRVisible { get; set; }
         public Event Event { get; set; }
         private ActivityRepository _activityRepository;
         private EventUserRepository _eventUserRepository;
@@ -37,6 +39,8 @@ namespace ZieDitApp.ViewModel
             }
 
             Registered = IsRegistered(Event);
+            Code = GetCode(Event);
+            QRVisible = Code != Guid.Empty ? "True" : "False";
         }
 
         public string IsRegistered(Event eventItem)
@@ -52,6 +56,22 @@ namespace ZieDitApp.ViewModel
             else
             {
                 return "Je bent niet ingeschreven.";
+            }
+        }
+
+        public Guid GetCode(Event eventItem)
+        {
+            int userId = App.CurrentUser.Id;
+            int eventId = eventItem.Id;
+            EventUser eventUser = _eventUserRepository.CheckRegisteredUser(userId, eventId);
+
+            if (eventUser != null)
+            {
+                return eventUser.Code;
+            }
+            else
+            {
+                return Guid.Empty;
             }
         }
         

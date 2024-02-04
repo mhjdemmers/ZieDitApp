@@ -18,5 +18,7 @@ namespace ZieDitApp.Model
         public int Event { get; set; }
         
         public int User { get; set; }
+
+        public Guid Code { get; set; }
     }
 }

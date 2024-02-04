@@ -41,7 +41,8 @@ public partial class EventPage : ContentPage
         EventUser eventUser = new EventUser()
         {
             Event = _eventItem.Id,
-            User = App.CurrentUser.Id
+            User = App.CurrentUser.Id,
+            Code = Guid.NewGuid()
         };
         _eventUserRepository.AddEventUser(eventUser);
 
