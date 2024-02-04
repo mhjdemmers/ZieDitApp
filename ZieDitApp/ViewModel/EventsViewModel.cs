@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using ZieDitApp.Model;
 using ZieDitApp.Repositories;
+using System.Windows.Input;
 
 namespace ZieDitApp.ViewModel
 {
@@ -15,19 +16,23 @@ namespace ZieDitApp.ViewModel
     {
         public ObservableCollection<Event> Events { get; set; }
         private EventRepository _eventRepository;
+        public ICommand RefreshCommand { get; }
 
         public EventsViewModel()
         {
+            Events = new ObservableCollection<Event>();
             _eventRepository = new EventRepository();
+            RefreshEvents();
+
+            RefreshCommand = new Command(RefreshEvents);
+        }
+
+        private void RefreshEvents()
+        {
             var events = _eventRepository.GetAllEvents();
-            if (events != null)
-            {
-                Events = new ObservableCollection<Event>(events);
-            }
-            else
-            {
-                Events = new ObservableCollection<Event>();
-            }
+
+            Events = new ObservableCollection<Event>(events);
+
         }
     }
 }

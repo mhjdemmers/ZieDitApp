@@ -38,6 +38,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
             <Button Text="Add Event" Style="{StaticResource ButtonStyleRed}" Clicked="OnAddEventButtonClicked" />
+            <Button Text="Refresh" Command="{Binding RefreshCommand}" Style="{StaticResource ButtonStyleRed}" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
