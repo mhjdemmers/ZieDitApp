@@ -5,7 +5,9 @@
              Title="AddEventPage">
     <VerticalStackLayout>
         <Entry x:Name="NameEntry" Placeholder="Name"/>
-        
+
+        <Entry x:Name="DescriptionEntry" Placeholder="Description"/>
+
         <Entry x:Name="LocationEntry" Placeholder="Location"/>
 
         <DatePicker x:Name="DatePicker" MinimumDate="{Binding MinimumDate}"

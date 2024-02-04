@@ -15,7 +15,7 @@ namespace ZieDitApp.ViewModel
         public Activity Activity { get; set; }
         private ActivityRepository _activityRepository;
         private ActivityUserRepository _activityUserRepository;
-        public ObservableCollection<Activity> Activities { get; set; }
+        //public ObservableCollection<Activity> Activities { get; set; }
 
         public ActivityViewModel(Activity activity)
         {
@@ -23,15 +23,15 @@ namespace ZieDitApp.ViewModel
             _activityUserRepository = new ActivityUserRepository();
             Activity = activity;
 
-            var activities = _activityRepository.GetAllActivities();
-            if (activities != null)
-            {
-                Activities = new ObservableCollection<Activity>(activities);
-            }
-            else
-            {
-                Activities = new ObservableCollection<Activity>();
-            }
+            //var activities = _activityRepository.GetAllActivities();
+            //if (activities != null)
+            //{
+            //    Activities = new ObservableCollection<Activity>(activities);
+            //}
+            //else
+            //{
+            //    Activities = new ObservableCollection<Activity>();
+            //}
 
             Registered = IsRegistered(Activity);
         }

@@ -30,7 +30,7 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <Label Grid.Row="0" Text="{Binding Name}" Style="{StaticResource LabelStyle2Black}" />
-                                <Label Grid.Row="1" Text="{Binding Date}" Style="{StaticResource LabelStyle3Black}" />
+                                <Label Grid.Row="1" Text="{Binding Date, StringFormat='{0:d}'}" Style="{StaticResource LabelStyle3Black}" />
                                 <Label Grid.Row="2" Text="{Binding Location}" Style="{StaticResource LabelStyle3Black}" />
                             </Grid>
                         </Frame>

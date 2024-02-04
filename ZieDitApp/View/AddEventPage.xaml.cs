@@ -19,7 +19,7 @@ public partial class AddEventPage : ContentPage
         {
             Name = NameEntry.Text,
             Location = LocationEntry.Text,
-            //Date = DateTime.Parse(DateEntry.Text),
+            Description = DescriptionEntry.Text,
             Date = DatePicker.Date,
             OrganizerId = App.CurrentUser.Id
         };
@@ -30,6 +30,7 @@ public partial class AddEventPage : ContentPage
         // Clear the fields
         NameEntry.Text = string.Empty;
         LocationEntry.Text = string.Empty;
+        DescriptionEntry.Text = string.Empty;
 
         // Go back to the previous page
         Navigation.PopAsync();

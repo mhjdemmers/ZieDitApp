@@ -7,11 +7,12 @@
     <ScrollView>
         <VerticalStackLayout Spacing="10" Padding="10">
             <Label 
-            Text="Event 1"
+            Text="{Binding Event.Name}"
             VerticalOptions="Start" 
             HorizontalOptions="Center"
             Style="{StaticResource LabelStyle1Red}"/>
-            <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc metus diam, scelerisque sed lacus aliquet, elementum scelerisque sem. Nam ac mauris quis elit feugiat mollis. Morbi pharetra elit et ullamcorper rutrum. Cras tincidunt auctor finibus. Donec id mauris fringilla ipsum fringilla consequat non id est. Vivamus molestie ex metus, id porttitor metus pellentesque at. Sed porttitor velit eget risus venenatis facilisis. Fusce et sapien vitae sem varius pharetra. Mauris ut tortor in elit venenatis fermentum quis non tellus. " Style="{StaticResource LabelStyle3Black}"/>
+            <Label Text="{Binding Event.Date, StringFormat='{0:d}'}" Style="{StaticResource LabelStyle3Black}"/>
+            <Label Text="{Binding Event.Description}" Style="{StaticResource LabelStyle3Black}"/>
             <CollectionView ItemsSource="{Binding Activities}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical"
@@ -30,7 +31,7 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <Label Grid.Row="0" Text="{Binding Name}" Style="{StaticResource LabelStyle2Black}" />
-                                <Label Grid.Row="1" Text="{Binding Time}" Style="{StaticResource LabelStyle3Black}" />
+                                <Label Grid.Row="1" Text="{Binding Time, StringFormat='{0:hh\\:mm}'}" Style="{StaticResource LabelStyle3Black}" />
                                 <Label Grid.Row="2" Text="{Binding Description}" Style="{StaticResource LabelStyle3Black}" />
                             </Grid>
                         </Frame>

@@ -4,13 +4,8 @@
              x:Class="ZieDitApp.View.AddActivityPage"
              Title="AddActivityPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
         <Entry x:Name="NameEntry" Placeholder="Name"/>
         <Entry x:Name="DescriptionEntry" Placeholder="Description"/>
-        <Entry x:Name="TimeEntry" Placeholder="Time"/>
         <TimePicker x:Name="TimePicker"/>
         <Button Text="Add" Style="{StaticResource ButtonStyleRed}" Clicked="OnAddButtonClicked"/>
     </VerticalStackLayout>
