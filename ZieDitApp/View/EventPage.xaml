@@ -11,8 +11,10 @@
             VerticalOptions="Start" 
             HorizontalOptions="Center"
             Style="{StaticResource LabelStyle1Red}"/>
+            
             <Label Text="{Binding Event.Date, StringFormat='{0:d}'}" Style="{StaticResource LabelStyle3Black}"/>
             <Label Text="{Binding Event.Description}" Style="{StaticResource LabelStyle3Black}"/>
+            
             <CollectionView ItemsSource="{Binding Activities}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical"
@@ -38,17 +40,22 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+
+            <Button Text="Update Event" Style="{StaticResource ButtonStyleRed}" Clicked="OnUpdateEventButtonClicked" />
             <Button Text="Delete Event" Style="{StaticResource ButtonStyleRed}" Clicked="OnDeleteEventButtonClicked" />
             <Button Text="Add Activity" Style="{StaticResource ButtonStyleRed}" Clicked="OnAddActivityButtonClicked" />
+            
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
                 <Button Text="Inschrijven" Style="{StaticResource ButtonStyleRed}" Clicked="OnInschrijvenButtonClicked" />
                 <Button Text="Uitschrijven" Style="{StaticResource ButtonStyleRed}" Clicked="OnUitschrijvenButtonClicked" />
             </HorizontalStackLayout>
+            
             <Label x:Name="RegisteredLabel" Text="{Binding Registered}" Style="{StaticResource LabelStyle3Black}"/>
             <cv:BarcodeImage IsVisible="{Binding QRVisible}" WidthRequest="400" HeightRequest="400"
                              BarcodeWidth="400" BarcodeHeight="400" BarcodeMargin="0"
                              BarcodeBackground="White" BarcodeForeground="Black"
                              BarcodeFormat="QR_CODE" Barcode="{Binding Code}"/>
+            
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

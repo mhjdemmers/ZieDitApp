@@ -10,8 +10,8 @@
         <Label Text="{Binding Activity.Time, StringFormat='{0:hh\\:mm}'}" Style="{StaticResource LabelStyle3Black}"/>
         <Label Text="{Binding Activity.Description}" Style="{StaticResource LabelStyle3Black}"/>
         
-        <Button Text="Delete Activity" Style="{StaticResource ButtonStyleRed}" Clicked="OnDeleteActivityButtonClicked" />
         <Button Text="Update Activity" Style="{StaticResource ButtonStyleRed}" Clicked="OnUpdateActivityButtonClicked" />
+        <Button Text="Delete Activity" Style="{StaticResource ButtonStyleRed}" Clicked="OnDeleteActivityButtonClicked" />
 
         <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
             <Button Text="Inschrijven" Style="{StaticResource ButtonStyleRed}" Clicked="OnInschrijvenButtonClicked" />

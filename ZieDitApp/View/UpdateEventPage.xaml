@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZieDitApp.View.UpdateEventPage"
+             Title="Update Event">
+    <VerticalStackLayout>
+        <Entry x:Name="NameEntry" Placeholder="Name" Text="{Binding Event.Name}"/>
+        <Entry x:Name="DescriptionEntry" Placeholder="Description" Text="{Binding Event.Description}"/>
+        <Entry x:Name="LocationEntry" Placeholder="Location" Text="{Binding Event.Location}"/>
+        <DatePicker x:Name="DatePicker" Date="{Binding Event.Date}"/>
+        <Button Text="Edit" Style="{StaticResource ButtonStyleRed}" Clicked="OnEditButtonClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

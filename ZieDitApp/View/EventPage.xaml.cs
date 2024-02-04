@@ -31,6 +31,12 @@ public partial class EventPage : ContentPage
         _eventRepository.DeleteEvent(_eventItem);
         Navigation.PopAsync();
     }
+
+    private void OnUpdateEventButtonClicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new UpdateEventPage(_eventItem));
+    }
+
     public void OnAddActivityButtonClicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new AddActivityPage(_eventItem));
