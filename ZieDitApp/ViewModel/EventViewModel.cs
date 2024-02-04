@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using ZieDitApp.Model;
 using ZieDitApp.Repositories;
 using Microsoft.Extensions.Logging;
+using System.Windows.Input;
 
 namespace ZieDitApp.ViewModel
 {
@@ -21,22 +22,28 @@ namespace ZieDitApp.ViewModel
         private ActivityRepository _activityRepository;
         private EventUserRepository _eventUserRepository;
         public ObservableCollection<Activity> Activities { get; set; }
+        public ICommand RefreshCommand { get; }
 
         public EventViewModel(Event eventItem)
         {
+            Activities = new ObservableCollection<Activity>();
             _activityRepository = new ActivityRepository();
             _eventUserRepository = new EventUserRepository();
             Event = eventItem;
-           
-            var activities = _activityRepository.GetAllActivities();
-            if (activities != null)
-            {
-                Activities = new ObservableCollection<Activity>(activities);
-            }
-            else
-            {
-                Activities = new ObservableCollection<Activity>();
-            }
+
+            RefreshEvents();
+
+            RefreshCommand = new Command(RefreshEvents);
+
+            //var activities = _activityRepository.GetAllActivities();
+            //if (activities != null)
+            //{
+            //    Activities = new ObservableCollection<Activity>(activities);
+            //}
+            //else
+            //{
+            //    Activities = new ObservableCollection<Activity>();
+            //}
 
             Registered = IsRegistered(Event);
             Code = GetCode(Event);
@@ -74,6 +81,14 @@ namespace ZieDitApp.ViewModel
                 return Guid.Empty;
             }
         }
-        
+
+        private void RefreshEvents()
+        {
+            var activities = _activityRepository.GetAllActivities();
+
+            Activities = new ObservableCollection<Activity>(activities);
+
+        }
+
     }
 }

@@ -44,6 +44,7 @@
             <Button Text="Update Event" Style="{StaticResource ButtonStyleRed}" Clicked="OnUpdateEventButtonClicked" />
             <Button Text="Delete Event" Style="{StaticResource ButtonStyleRed}" Clicked="OnDeleteEventButtonClicked" />
             <Button Text="Add Activity" Style="{StaticResource ButtonStyleRed}" Clicked="OnAddActivityButtonClicked" />
+            <Button Text="Refresh" Command="{Binding RefreshCommand}" Style="{StaticResource ButtonStyleRed}" />
             
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
                 <Button Text="Inschrijven" Style="{StaticResource ButtonStyleRed}" Clicked="OnInschrijvenButtonClicked" />
