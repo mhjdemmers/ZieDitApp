@@ -9,6 +9,19 @@ namespace ZieDitApp.Repositories
 {
     public class UserRepository : BaseRepository<User>
     {
+        public User GetUserById(int id)
+        {
+            try
+            {
+                return connection.Table<User>().FirstOrDefault(x => x.Id == id);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+            }
+            return null;
+        }
+
         public User GetUserByUsername(string username)
         {
             try

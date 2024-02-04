@@ -48,5 +48,18 @@ namespace ZieDitApp.Repositories
             }
         }
 
+        public EventUser CheckCode(Guid code)
+        {
+            try
+            {
+                return connection.Table<EventUser>().FirstOrDefault(x => x.Code == code);
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = $"Error: {ex.Message}";
+                return null;
+            }
+        }
+
     }
 }

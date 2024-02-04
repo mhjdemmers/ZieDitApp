@@ -13,7 +13,7 @@ namespace ZieDitApp.Model
     public class User : TableData
     {
         [SQLite.Column("name"), Indexed, SQLite.NotNull]
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         public string? Password { get; set; }
     }
