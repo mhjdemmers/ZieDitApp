@@ -22,7 +22,7 @@ namespace ZieDitApp.Repositories
                 Constants.flags);
             connection.CreateTable<T>();
         }
-        public void SaveEntity(T? entity)
+        public void SaveEntity(T entity)
         {
             int result = 0;
             try

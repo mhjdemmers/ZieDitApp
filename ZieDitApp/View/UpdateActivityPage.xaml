@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZieDitApp.View.UpdateActivityPage"
+             Title="UpdateActivityPage">
+    <VerticalStackLayout>
+        <Entry x:Name="NameEntry" Placeholder="Name" Text="{Binding Activity.Name}"/>
+        <Entry x:Name="DescriptionEntry" Placeholder="Description" Text="{Binding Activity.Description}"/>
+        <TimePicker x:Name="TimePicker" Time="{Binding Activity.Time}"/>
+        <Button Text="Edit" Style="{StaticResource ButtonStyleRed}" Clicked="OnEditButtonClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

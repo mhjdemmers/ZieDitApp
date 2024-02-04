@@ -12,9 +12,6 @@ namespace ZieDitApp.Model
     [SQLite.Table("EventUsers")]
     public class EventUser : TableData
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-
         public int Event { get; set; }
         
         public int User { get; set; }

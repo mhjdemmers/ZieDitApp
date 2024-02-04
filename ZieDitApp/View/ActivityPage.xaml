@@ -4,20 +4,21 @@
              x:Class="ZieDitApp.View.ActivityPage"
              Title="Activity">
     <VerticalStackLayout Spacing="10" Padding="10">
-        <!--<Label 
-            Text="Activity 1"
-            VerticalOptions="Start" 
-            HorizontalOptions="Center"
-            Style="{StaticResource LabelStyle1Red}"/>-->
-        <!--<Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc metus diam, scelerisque sed lacus aliquet, elementum scelerisque sem. Nam ac mauris quis elit feugiat mollis. Morbi pharetra elit et ullamcorper rutrum. Cras tincidunt auctor finibus. Donec id mauris fringilla ipsum fringilla consequat non id est. Vivamus molestie ex metus, id porttitor metus pellentesque at. Sed porttitor velit eget risus venenatis facilisis. Fusce et sapien vitae sem varius pharetra. Mauris ut tortor in elit venenatis fermentum quis non tellus. " Style="{StaticResource LabelStyle3Black}"/>-->
+        
         <Label Text="{Binding Activity.Name}" Style="{StaticResource LabelStyle1Red}" HorizontalOptions="Center"/>
+        
         <Label Text="{Binding Activity.Time, StringFormat='{0:hh\\:mm}'}" Style="{StaticResource LabelStyle3Black}"/>
         <Label Text="{Binding Activity.Description}" Style="{StaticResource LabelStyle3Black}"/>
+        
         <Button Text="Delete Activity" Style="{StaticResource ButtonStyleRed}" Clicked="OnDeleteActivityButtonClicked" />
+        <Button Text="Update Activity" Style="{StaticResource ButtonStyleRed}" Clicked="OnUpdateActivityButtonClicked" />
+
         <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
             <Button Text="Inschrijven" Style="{StaticResource ButtonStyleRed}" Clicked="OnInschrijvenButtonClicked" />
             <Button Text="Uitschrijven" Style="{StaticResource ButtonStyleRed}" Clicked="OnUitschrijvenButtonClicked" />
         </HorizontalStackLayout>
+        
         <Label x:Name="RegisteredLabel" Text="{Binding Registered}" Style="{StaticResource LabelStyle3Black}"/>
+        
     </VerticalStackLayout>
 </ContentPage>

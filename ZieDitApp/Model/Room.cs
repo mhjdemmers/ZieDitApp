@@ -13,8 +13,6 @@ namespace ZieDitApp.Model
     [SQLite.Table("Rooms")]
     class Room : TableData
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
         public string? Name { get; set; }
         public int MaxVisitors { get; set; }
         public string? Description { get; set; }

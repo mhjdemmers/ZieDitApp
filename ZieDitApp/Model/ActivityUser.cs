@@ -11,9 +11,6 @@ namespace ZieDitApp.Model
     [SQLite.Table("ActivityUsers")]
     class ActivityUser : TableData
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-
         public int Activity { get; set; }
 
         public int User { get; set; }

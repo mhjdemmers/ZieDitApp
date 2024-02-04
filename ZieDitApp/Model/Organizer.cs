@@ -10,8 +10,6 @@ namespace ZieDitApp.Model
 {
     class Organizer : User
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
         public int EventId { get; set; }
     }
 }

@@ -9,8 +9,6 @@ namespace ZieDitApp.Model
 {
     class Presenter : User
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
        
     }
 }

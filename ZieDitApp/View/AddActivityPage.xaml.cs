@@ -5,8 +5,10 @@ namespace ZieDitApp.View;
 
 public partial class AddActivityPage : ContentPage
 {
-	public AddActivityPage()
+    private Event _event ;
+	public AddActivityPage(Event eventItem)
 	{
+        _event = eventItem;
 		InitializeComponent();
 	}
 
@@ -16,7 +18,9 @@ public partial class AddActivityPage : ContentPage
         {
             Name = NameEntry.Text,
             Description = DescriptionEntry.Text,
-            Time = TimePicker.Time
+            Time = TimePicker.Time,
+            EventId = _event.Id,
+            PresenterId = App.CurrentUser.Id
             //Time = DateTime.Parse(TimeEntry.Text)
         };
 

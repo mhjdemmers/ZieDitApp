@@ -33,7 +33,7 @@ public partial class EventPage : ContentPage
     }
     public void OnAddActivityButtonClicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new AddActivityPage());
+        Navigation.PushAsync(new AddActivityPage(_eventItem));
     }
 
     private void OnInschrijvenButtonClicked(object sender, EventArgs e)

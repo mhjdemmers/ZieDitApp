@@ -24,6 +24,11 @@ public partial class ActivityPage : ContentPage
         Navigation.PopAsync();
     }
 
+    private void OnUpdateActivityButtonClicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new UpdateActivityPage(_activity));
+    }
+
     private void OnInschrijvenButtonClicked(object sender, EventArgs e)
     {
         ActivityUser activityUser = new ActivityUser()
