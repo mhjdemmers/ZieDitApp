@@ -2,10 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ZieDitApp.View.SignUpPage"
-             Title="SignUpPage">
-    <StackLayout Padding="20">
-        <Entry Placeholder="Username" Text="{Binding UserName}"/>
-        <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}"/>
-        <Button Text="Sign Up" Command="{Binding SignUpCommand}"/>
-    </StackLayout>
+             Title="Sign Up">
+    <VerticalStackLayout Spacing="10" Padding="10">
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+            <Label Text="Zie Dit" VerticalOptions="Center" HorizontalOptions="Start" Style="{StaticResource LabelStyle1Red}"/>
+            <Image Source="logozuyd.png" WidthRequest="80" HeightRequest="80" />
+        </HorizontalStackLayout>
+        <Label Text="Sign Up" Style="{StaticResource LabelStyle2Black}"/>
+        <Entry Placeholder="Username" Text="{Binding UserName}" Style="{StaticResource EntryStyle}"/>
+        <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}" Style="{StaticResource EntryStyle}"/>
+        <Button Text="Sign Up" Command="{Binding SignUpCommand}" Style="{StaticResource ButtonStyleRed}"/>
+    </VerticalStackLayout>
 </ContentPage>

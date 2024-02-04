@@ -31,5 +31,7 @@
 
         <Button Text="Sign Up" Style="{StaticResource ButtonStyleRed}" Clicked="OnSignUpClicked"/>
 
+        <Label Text="Forgot password?" Style="{StaticResource LabelStyle3Black}" HorizontalOptions="Center"/>
+
     </VerticalStackLayout>
 </ContentPage>

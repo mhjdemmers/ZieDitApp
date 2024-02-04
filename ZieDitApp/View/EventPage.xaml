@@ -38,7 +38,7 @@
             </CollectionView>
             <Button Text="Delete Event" Style="{StaticResource ButtonStyleRed}" Clicked="OnDeleteEventButtonClicked" />
             <Button Text="Add Activity" Style="{StaticResource ButtonStyleRed}" Clicked="OnAddActivityButtonClicked" />
-            <HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
                 <Button Text="Inschrijven" Style="{StaticResource ButtonStyleRed}" Clicked="OnInschrijvenButtonClicked" />
                 <Button Text="Uitschrijven" Style="{StaticResource ButtonStyleRed}" Clicked="OnUitschrijvenButtonClicked" />
             </HorizontalStackLayout>
